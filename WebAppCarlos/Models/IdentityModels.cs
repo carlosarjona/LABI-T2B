@@ -29,5 +29,7 @@ namespace WebAppCarlos.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<WebAppCarlos.Models.Musica> Musicas { get; set; }
     }
 }
