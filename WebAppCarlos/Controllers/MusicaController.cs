@@ -14,6 +14,14 @@ namespace WebAppCarlos.Controllers
     {
         private SisMusicaContext db = new SisMusicaContext();
 
+
+        public ActionResult VerificaTitulo(string titulo)
+        {
+            return Json(db.Musica
+                .all(M => m.titulo.ToLower() != titulo.ToLower()),
+                JsonRequestBehavior.AllowGet);
+        }
+
         // GET: Musica
         public ActionResult Index()
         {
