@@ -12,7 +12,7 @@ namespace WebAppCarlos.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Titulo é obrigatorio")]
-        [MaxLength(ErrorMessage = "Maximo 400 caracteres")]
+        [MaxLength(400,ErrorMessage = "Maximo 400 caracteres")]
         public string Titulo { get; set; }
 
         public Categoria Categoria { get; set; }

@@ -12,7 +12,7 @@ namespace WebAppCarlos.Controllers
 {
     public class MusicaController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private SisMusicaContext db = new SisMusicaContext();
 
         // GET: Musica
         public ActionResult Index()
