@@ -15,10 +15,10 @@ namespace WebAppCarlos.Controllers
         private SisMusicaContext db = new SisMusicaContext();
 
 
-        public ActionResult VerificaTitulo(string titulo)
+        public ActionResult VerificaTitulo(string Titulo)
         {
-            return Json(db.Musica
-                .all(M => m.titulo.ToLower() != titulo.ToLower()),
+            return Json(db.Musicas
+                .All(m => m.Titulo.ToLower() != Titulo.ToLower()),
                 JsonRequestBehavior.AllowGet);
         }
 
@@ -60,6 +60,7 @@ namespace WebAppCarlos.Controllers
             {
                 db.Musicas.Add(musica);
                 db.SaveChanges();
+                TempData["Mensagem"] = "Musica cadastrada com sucesso!";
                 return RedirectToAction("Index");
             }
 
@@ -92,6 +93,7 @@ namespace WebAppCarlos.Controllers
             {
                 db.Entry(musica).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["Mensagem"] = "Musica excluida com sucesso!"
                 return RedirectToAction("Index");
             }
             return View(musica);
